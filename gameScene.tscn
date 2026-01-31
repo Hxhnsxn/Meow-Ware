@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dldntde3raks5"]
+
+[ext_resource type="PackedScene" uid="uid://butdmdnjmskuu" path="res://Subway Surfers/box.tscn" id="1_snd1y"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7o08m"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_k15wb"]
+sky_material = SubResource("ProceduralSkyMaterial_7o08m")
+
+[sub_resource type="Environment" id="Environment_ybgqn"]
+background_mode = 2
+sky = SubResource("Sky_k15wb")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_h4xy8"]
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_snd1y"]
+size = Vector3(10, 0.5, 10)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ybgqn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 3.18833, 0)
+shadow_enabled = true
+
+[node name="floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.249444, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
+mesh = SubResource("BoxMesh_h4xy8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
+shape = SubResource("BoxShape3D_snd1y")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.866025, -0.180715, 0.4662, 0, 0.9324, 0.361429, -0.5, -0.313007, 0.807482, 1.82245, 3.75209, 3.31088)
+
+[node name="block1" parent="." instance=ExtResource("1_snd1y")]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 3, 0)
+
+[node name="block2" parent="." instance=ExtResource("1_snd1y")]
+transform = Transform3D(1, 0, 0, 0, 0.886543, 0.462646, 0, -0.462646, 0.886543, 0, 4.63381, -0.514897)

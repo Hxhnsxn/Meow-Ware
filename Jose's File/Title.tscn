@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtndui1hboae2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vi8yv"]
+font_size = 71
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 617.0
+offset_top = 378.0
+offset_right = 1117.0
+offset_bottom = 536.0
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_right = 496.615
+offset_bottom = 150.0
+text = "Press Start"
+label_settings = SubResource("LabelSettings_vi8yv")
+horizontal_alignment = 1
+vertical_alignment = 1

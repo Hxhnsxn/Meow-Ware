@@ -1,0 +1,95 @@
+[gd_scene load_steps=12 format=3 uid="uid://ikugnpjwh1iy"]
+
+[ext_resource type="Shader" uid="uid://bhui3c45tkcn5" path="res://Jose's File/sky.gdshader" id="1_ourib"]
+[ext_resource type="Script" uid="uid://b42nrm8fmjvel" path="res://Jose's File/CameraMove.gd" id="1_u3m3s"]
+[ext_resource type="PackedScene" uid="uid://bq7tmpxjqc6we" path="res://Jose's File/computerView.tscn" id="2_5vdjf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ri2sv"]
+shader = ExtResource("1_ourib")
+
+[sub_resource type="Sky" id="Sky_ourib"]
+sky_material = SubResource("ShaderMaterial_ri2sv")
+
+[sub_resource type="Environment" id="Environment_8uh7m"]
+background_mode = 2
+sky = SubResource("Sky_ourib")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vdjf"]
+albedo_color = Color(0.2, 0.2, 0.2, 0.658824)
+normal_scale = 3.59
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8uh7m"]
+material = SubResource("StandardMaterial3D_5vdjf")
+size = Vector2(10, 10)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_37kl0"]
+data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
+
+[sub_resource type="Curve3D" id="Curve3D_h5n5y"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6.25525, 14.6315, 49.8603, 0, 0, 0, 0, 0, 0, -6.25525, 26.2298, -13.2329),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_oudik"]
+font_size = 71
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_u3m3s")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8uh7m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.173648, -0.508686, 0.843259, -0.94002, 0.340904, 0.012073, -0.293612, -0.790584, -0.537373, 18.1826, 61.5165, 89.2264)
+visible = false
+shadow_enabled = true
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -0.257689, 0.443477, 0.158976)
+mesh = SubResource("PlaneMesh_8uh7m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_37kl0")
+
+[node name="Computer" parent="." instance=ExtResource("2_5vdjf")]
+transform = Transform3D(0.69037, 0, 0, 0, 0.746911, 0, 0, 0, 0.746911, -1.92706, 0.443474, -14.038)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.24675, 14.6421, 2.9415)
+light_color = Color(0.215105, 0.441858, 1, 1)
+light_energy = 2.468
+omni_range = 20.224
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.3082, 0)
+curve = SubResource("Curve3D_h5n5y")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(0.999997, 0, 0, 0, 0.983514, -0.180797, 0, 0.180797, 0.983514, -6.25525, 14.6315, 49.8603)
+
+[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D"]
+transform = Transform3D(0.999957, -0.00689512, 0.00665366, 0.00478604, 0.960984, 0.276581, -0.0083011, -0.276536, 0.960973, 0, 0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 733.0
+offset_top = 223.0
+offset_right = 1220.0
+offset_bottom = 356.0
+action_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Button"]
+layout_mode = 0
+offset_right = 487.0
+offset_bottom = 132.0
+text = "Start Game"
+label_settings = SubResource("LabelSettings_oudik")
+horizontal_alignment = 1
+vertical_alignment = 1
