@@ -23,14 +23,13 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector(\"move_left\", \"move_right\", \"move_forward\", \"move_down\")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
+		velocity.x = direction.x * SPEED 
 		velocity.z = direction.z * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-
 "
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_a06vx"]
@@ -41,10 +40,11 @@ func _physics_process(delta: float) -> void:
 script = SubResource("GDScript_3u4n1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.33277, 0, 0.943008, 0, 1, 0, -0.943008, 0, 0.33277, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_a06vx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_mjxxk")
 
 [node name="PlayerCam" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.980247, 0.197777, 0, -0.197777, 0.980247, 0, 1.65443, 4.45369)
+transform = Transform3D(1, 0, 0, 0, 0.992217, 0.124519, 0, -0.124519, 0.992217, 0, 3.04682, 7.04945)

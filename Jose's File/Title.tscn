@@ -13,10 +13,10 @@ grow_vertical = 2
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 617.0
-offset_top = 378.0
-offset_right = 1117.0
-offset_bottom = 536.0
+offset_left = 315.0
+offset_top = 256.0
+offset_right = 815.0
+offset_bottom = 414.0
 
 [node name="Label" type="Label" parent="Button"]
 layout_mode = 0

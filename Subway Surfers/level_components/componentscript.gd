@@ -7,6 +7,3 @@ func _process(delta: float):
 	if position.x < -15:
 		level.spawnModule(position.x+(level.num * level.offset))
 		queue_free()
-
-
-	
