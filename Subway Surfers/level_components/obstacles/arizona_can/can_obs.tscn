@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://cmtmywaxyw1t1"]
+[gd_scene load_steps=22 format=4 uid="uid://cmtmywaxyw1t1"]
 
 [ext_resource type="Texture2D" uid="uid://clu36a6oa8do4" path="res://Subway Surfers/level_components/obstacles/arizona_can/textures/Label_baseColor.png" id="1_603oo"]
 [ext_resource type="Script" uid="uid://capmff7hmdule" path="res://Subway Surfers/level_components/obstacles/arizona_can/can_script.gd" id="1_d5ydv"]
@@ -206,6 +206,42 @@ shadow_mesh = SubResource("ArrayMesh_s6k4w")
 height = 0.159943
 radius = 0.0366211
 
+[sub_resource type="Animation" id="Animation_d5ydv"]
+resource_name = "rolling"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 6.28319)]
+}
+
+[sub_resource type="Animation" id="Animation_xydq4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eu8ke"]
+_data = {
+&"RESET": SubResource("Animation_xydq4"),
+&"rolling": SubResource("Animation_d5ydv")
+}
+
 [node name="can_obs" type="Node3D"]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
 script = ExtResource("1_d5ydv")
@@ -245,3 +281,8 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.000518963, -5.59069e-05, -0.0156361)
 shape = SubResource("CylinderShape3D_sg05q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_eu8ke")
+}
