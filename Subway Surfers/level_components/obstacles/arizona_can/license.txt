@@ -1,0 +1,11 @@
+Model Information:
+* title:	Arizona Can
+* source:	https://sketchfab.com/3d-models/arizona-can-1c44d008f1a44a72a9874d75b14bd9fe
+* author:	alpaca. (https://sketchfab.com/alpaca.)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Arizona Can" (https://sketchfab.com/3d-models/arizona-can-1c44d008f1a44a72a9874d75b14bd9fe) by alpaca. (https://sketchfab.com/alpaca.) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
