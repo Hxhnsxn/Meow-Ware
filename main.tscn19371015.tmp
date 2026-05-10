@@ -1,0 +1,36 @@
+[gd_scene load_steps=13 format=3 uid="uid://b8pvovyhuljmy"]
+
+[ext_resource type="Script" uid="uid://dlf5783c7yd4l" path="res://logic.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dckv5477exlwm" path="res://Subway Surfers/level_components/NewTiles/no_obs.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cuq8wqmdh7bju" path="res://Subway Surfers/level_components/NewTiles/left_obs.tscn" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://v06tdfxo1bay" path="res://Subway Surfers/level_components/NewTiles/right_obs.tscn" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bprjynnrnoo3v" path="res://Subway Surfers/level_components/NewTiles/middle_obs.tscn" id="5_5vw27"]
+[ext_resource type="PackedScene" uid="uid://c802rqsxxaj5" path="res://Subway Surfers/level_components/NewTiles/double_right_obs.tscn" id="6_kek77"]
+[ext_resource type="PackedScene" uid="uid://b2rijesnl7agd" path="res://Subway Surfers/level_components/NewTiles/double_left_obs.tscn" id="7_4c57u"]
+[ext_resource type="PackedScene" uid="uid://bqtvsuqbw7ww0" path="res://Jose's File/Player2.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://cmtmywaxyw1t1" path="res://Subway Surfers/level_components/obstacles/arizona_can/can_obs.tscn" id="8_kek77"]
+[ext_resource type="PackedScene" uid="uid://dhokivqhwdii0" path="res://Subway Surfers/level_components/obstacles/coin.tscn" id="10_4c57u"]
+
+[sub_resource type="Environment" id="Environment_ig7tw"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_0xm2m"]
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ig7tw")
+camera_attributes = SubResource("CameraAttributesPractical_0xm2m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.737207, 0, 0.675667, -0.14998, 0.975053, 0.163641, -0.658811, -0.221974, 0.718816, 5.17267, 9.54605, -0.192311)
+
+[node name="logic" type="Node3D" parent="."]
+script = ExtResource("1_ig7tw")
+modules = Array[PackedScene]([ExtResource("2_h2yge"), ExtResource("3_1bvp3"), ExtResource("4_lquwl"), ExtResource("5_5vw27"), ExtResource("6_kek77"), ExtResource("7_4c57u")])
+obstacles = Array[PackedScene]([ExtResource("8_kek77")])
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("7_272bh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.575707, 2.07277, 0.0401654)
+
+[node name="coin" parent="." instance=ExtResource("10_4c57u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.72674, 3.04851, 1.53831)

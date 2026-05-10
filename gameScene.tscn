@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://butdmdnjmskuu" path="res://Subway Surfers/box.tscn" id="1_snd1y"]
 [ext_resource type="Environment" uid="uid://dd0tp3q72l3ow" path="res://resources/level1_environment.tres" id="1_ybgqn"]
 [ext_resource type="PackedScene" uid="uid://dxlw3t3y5ohrb" path="res://Subway Surfers/mavis.tscn" id="2_7o08m"]
-[ext_resource type="PackedScene" uid="uid://dhokivqhwdii0" path="res://Subway Surfers/coin.tscn" id="5_4t2pl"]
+[ext_resource type="PackedScene" uid="uid://dhokivqhwdii0" path="res://Subway Surfers/level_components/obstacles/coin.tscn" id="5_4t2pl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4t2pl"]
 albedo_color = Color(0.192056, 0.52666, 0.423368, 1)
@@ -51,4 +51,4 @@ transform = Transform3D(1, 0, 0, 0, 0.886543, 0.462646, 0, -0.462646, 0.886543, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85118, 1, -2.68968)
 
 [node name="coin1" parent="." instance=ExtResource("5_4t2pl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09541, 1.79241)
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 1.09541, 1.79241)

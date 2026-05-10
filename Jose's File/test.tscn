@@ -79,10 +79,10 @@ transform = Transform3D(0.999957, -0.00689512, 0.00665366, 0.00478604, 0.960984,
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 733.0
-offset_top = 223.0
-offset_right = 1220.0
-offset_bottom = 356.0
+offset_left = 343.0
+offset_top = 237.0
+offset_right = 830.0
+offset_bottom = 370.0
 action_mode = 0
 
 [node name="Label" type="Label" parent="CanvasLayer/Button"]

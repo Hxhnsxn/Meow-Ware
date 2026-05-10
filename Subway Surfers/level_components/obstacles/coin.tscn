@@ -11,7 +11,7 @@ radius = 0.3
 script = ExtResource("1_25nyb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.000174443, 0.350242, 2.48152e-06, 0.00060828, 3.25083e-06, -0.304685, -0.304685, -0.00020052, -0.000608282, 0, 0, 0)
+transform = Transform3D(-0.000174431, 0.350242, 2.46351e-06, 0.000604295, 3.22953e-06, -0.304685, -0.304685, -0.000200506, -0.000604296, 0, 0, 0)
 mesh = ExtResource("2_0ebn2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

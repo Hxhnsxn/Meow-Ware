@@ -6,7 +6,6 @@ const ROT_SPEED = 2 # num of degs. the coin rotates every frame
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	rotate_y(deg_to_rad(ROT_SPEED))
@@ -14,3 +13,6 @@ func _process(delta: float) -> void:
 # detects signal of a collision from a physics_body_3d
 func _on_body_entered(body: Node3D) -> void:
 	queue_free()
+
+	
+	

@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	t += delta
 	path.progress = t * 35.0
 	if (path.progress > 55):
-		get_tree().change_scene_to_file("res://Jose's File/PlateformScene.tscn")
+		get_tree().change_scene_to_file("res://main.tscn")
 func delay_title():
 	if paused:
 		menu.show()
